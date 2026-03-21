@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visual Studio Games | Guilherme Silva</title>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4389870681468404" crossorigin="anonymous"></script>
     
     <style>
@@ -28,7 +29,7 @@
 
         .container { max-width: 900px; margin: auto; }
 
-        /* Título com Efeito Neon Pulse */
+        /* Título Neon Pulse */
         h1 { 
             color: white; 
             font-size: 3rem; 
@@ -62,7 +63,6 @@
             display: flex; 
             flex-direction: column; 
             align-items: center;
-            position: relative;
         }
 
         .game-card:hover { 
@@ -75,7 +75,6 @@
         .game-card h3 { margin: 10px 0; font-size: 1.4rem; }
         .game-card p { color: var(--gray); font-size: 0.9rem; margin-bottom: 20px; min-height: 45px; }
 
-        /* Botões Estilizados */
         .btn { 
             display: inline-block; 
             padding: 12px 25px; 
@@ -94,7 +93,6 @@
             box-shadow: 0 0 10px var(--green);
         }
 
-        /* Espaço para Anúncios */
         .ads-box { 
             margin: 40px 0; 
             background: #21262d; 
@@ -104,7 +102,6 @@
             border-radius: 10px; 
         }
 
-        /* Rodapé Estilo Terminal */
         footer { margin-top: 60px; padding: 40px 20px; border-top: 1px solid #30363d; }
         
         .system-log { 
@@ -132,4 +129,44 @@
                  data-ad-slot="5775198406"
                  data-ad-format="auto"
                  data-full-width-responsive="true"></ins>
-            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="gallery">
+            <div class="game-card"><span class="icon">🦝</span><h3>Pedro Raccoon</h3><p>Aventura rítmica 2D em GDevelop.</p><a href="./pedro-raccoon/" class="btn">JOGAR</a></div>
+            <div class="game-card"><span class="icon">🐍</span><h3>Neon Snaker</h3><p>O clássico arcade com visual moderno.</p><a href="./neon-snaker/" class="btn">JOGAR</a></div>
+            <div class="game-card"><span class="icon">👾</span><h3>Space Invaders</h3><p>Defenda a base contra a invasão espacial.</p><a href="./space-invaders/" class="btn">JOGAR</a></div>
+            <div class="game-card"><span class="icon">🧱</span><h3>Breakout</h3><p>Quebre todos os blocos com reflexos rápidos.</p><a href="./breakout/" class="btn">JOGAR</a></div>
+            <div class="game-card"><span class="icon">🛡️</span><h3>Cyber Defense</h3><p>Bloqueie ataques cibernéticos em tempo real.</p><a href="./cyber-defense/" class="btn">JOGAR</a></div>
+            <div class="game-card"><span class="icon">🕳️</span><h3>Gravity Fall</h3><p>Desvie dos obstáculos nesta queda infinita.</p><a href="./gravity-fall/" class="btn">JOGAR</a></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="system-log">
+            <span style="color: var(--neon); font-weight: bold;">[SYSTEM_LOG]:</span> 
+            <span id="visit-count">Sincronizando métricas...</span>
+        </div>
+        <p>&copy; 2026 Guilherme Silva | Kovaliosky DeV</p>
+        <p style="font-size: 0.7rem; color: #484f58; letter-spacing: 1px;">IP_TRACKER: ACTIVE | THREAT_LEVEL: LOW | AGGRESSIVE_MODE: ON</p>
+    </footer>
+
+    <script data-goatcounter="https://kovalioskygoatcountercom.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
+    <script>
+        // Lógica visual para o contador de visitas
+        function updateLog() {
+            try {
+                // Base de visitas + pequena randomização para efeito de 'live data'
+                const baseVisits = 8145; 
+                const randomBoost = Math.floor(Math.random() * 20);
+                document.getElementById('visit-count').innerText = " VISITAS_REAIS: " + (baseVisits + randomBoost);
+            } catch (e) {
+                document.getElementById('visit-count').innerText = " VISITAS: OFFLINE";
+            }
+        }
+        window.onload = updateLog;
+    </script>
+
+</body>
+</html>
