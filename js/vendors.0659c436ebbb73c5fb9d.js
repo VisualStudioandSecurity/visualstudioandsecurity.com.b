@@ -1,4 +1,4 @@
-/*! For license information please see vendors.0659c436ebbb73c5fb9d.js.LICENSE.txt */
+/*! For license information please see vendors.0659c436ebbb73c5fb9d.js.LICENSE.js */
 (self.cgHomePageWebpackChunks = self.cgHomePageWebpackChunks || []).push([["vendors"], {
     693: function(n, t, r) {
         "use strict";
