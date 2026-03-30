@@ -111,20 +111,24 @@
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
  <body class="h-full">
-  <div id="app" class="h-full w-full overflow-auto flex flex-col items-center" style="background: linear-gradient(135deg, #0f1923 0%, #1a0a0a 50%, #0f1923 100%); font-family: 'Rajdhani', sans-serif;">
-   <!-- Header -->
+  <div id="app" class="h-full w-full overflow-auto flex flex-col items-center" style="background: linear-gradient(135deg, #0f1923 0%, #1a0a0a 50%, #0f1923 100%); font-family: 'Rajdhani', sans-serif;"><!-- Header -->
    <header class="w-full flex items-center justify-between px-4 py-4 relative" style="border-bottom: 2px solid #ff465540;">
     <div class="absolute left-0 right-0 h-px bottom-0" style="background: linear-gradient(90deg, transparent, #ff4655, transparent);"></div>
     <div class="flex-1 text-center">
      <h1 id="title" class="text-3xl md:text-4xl font-black tracking-widest" style="font-family: 'Orbitron', monospace; color: #ff4655;">VALORANT</h1>
     </div>
     <div class="flex gap-4 text-sm font-bold" style="color: #888;">
-     <div class="flex flex-col items-center"><span style="color: #ff4655; font-size: 1.2rem;" id="win-count">0</span> <span>Vitórias</span>
+     <div class="flex flex-col items-center">
+      <span style="color: #ff4655; font-size: 1.2rem;" id="win-count">0</span> <span>Vitórias</span>
      </div>
-     <div class="flex flex-col items-center"><span style="color: #888; font-size: 1.2rem;" id="loss-count">0</span> <span>Derrotas</span>
+     <div class="flex flex-col items-center">
+      <span style="color: #888; font-size: 1.2rem;" id="loss-count">0</span> <span>Derrotas</span>
      </div>
     </div>
-   </header><!-- Toast container -->
+   </header><!-- Hint Button -->
+   <div class="mt-3 mb-2"><button id="hint-btn" class="key" style="background: #6366f1; font-family: 'Orbitron', monospace; font-weight: 700; padding: 8px 16px; transition: all 0.2s;" onclick="showHint()">💡 DICA</button>
+    <div id="hint-display" style="margin-top: 8px; padding: 10px 16px; border-radius: 6px; background: rgba(99, 102, 241, 0.2); border: 1px solid #6366f1; color: #6366f1; font-family: 'Orbitron', monospace; font-size: 0.9rem; display: none; text-align: center; max-width: 300px; margin-left: auto; margin-right: auto;"></div>
+   </div><!-- Toast container -->
    <div id="toast-container"></div><!-- Grid -->
    <main class="flex flex-col items-center gap-1.5 mt-4 px-2" id="grid"></main><!-- Keyboard -->
    <div class="mt-auto pb-4 pt-4 px-1 w-full max-w-lg flex flex-col items-center gap-1.5" id="keyboard"></div><!-- Modal -->
@@ -263,6 +267,18 @@
     currentRow = 0;
     gameOver = false;
     keyStates = {};
+    
+    // Reset hint button
+    const hintBtn = document.getElementById('hint-btn');
+    hintBtn.style.background = '#6366f1';
+    hintBtn.textContent = '💡 DICA';
+    hintBtn.disabled = false;
+    
+    // Clear hint display
+    const hintDisplay = document.getElementById('hint-display');
+    hintDisplay.textContent = '';
+    hintDisplay.style.display = 'none';
+    
     buildGrid();
     buildKeyboard();
   }
@@ -478,6 +494,24 @@
     }
   }
 
+  function showHint() {
+    const hintDisplay = document.getElementById('hint-display');
+    const hintBtn = document.getElementById('hint-btn');
+    
+    if (gameOver) {
+      showToast('Jogo finalizado!', '#ff4655');
+      return;
+    }
+    
+    if (hintDisplay.style.display === 'none' || hintDisplay.textContent === '') {
+      hintDisplay.textContent = answerDesc;
+      hintDisplay.style.display = 'block';
+      hintBtn.style.background = '#10b981';
+      hintBtn.textContent = '✓ DICA USADA';
+      hintBtn.disabled = true;
+    }
+  }
+
   // Keyboard input
   document.addEventListener('keydown', (e) => {
     if (e.ctrlKey || e.metaKey || e.altKey) return;
@@ -549,5 +583,5 @@
     document.getElementById('loss-count').textContent = stats.losses;
   }
 </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e48c618a39d622e',t:'MTc3NDg5MTEwOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e48d4c502a51af0',t:'MTc3NDg5MTcxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
