@@ -30,8 +30,14 @@
             background: var(--valorant-red);
             clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%);
             transition: 0.3s;
+            display: inline-block;
+            padding: 8px 32px;
+            font-size: 14px;
+            font-weight: 900;
+            font-style: italic;
+            color: white;
         }
-        .btn-play:hover { filter: brightness(1.2); padding-right: 2rem; }
+        .btn-play:hover { filter: brightness(1.2); padding-right: 48px; }
     </style>
 </head>
 <body class="h-full flex flex-col">
@@ -41,63 +47,60 @@
             <h1 class="orbitron text-4xl font-black tracking-tighter text-white">VISUAL STUDIO <span class="text-[#ff4655]">GAMES</span></h1>
             <p class="text-gray-500 text-xs tracking-[0.3em] uppercase mt-1">Experimental Development Unit // 2026</p>
         </div>
-        <div class="hidden md:block text-right">
-            <p class="text-[10px] text-cyan-400 mono uppercase">Status: Online</p>
-            <p class="text-[10px] text-gray-600">Location: Ji-Paraná, BR</p>
-        </div>
     </header>
 
     <main class="flex-grow max-w-6xl mx-auto w-full p-8 grid md:grid-cols-2 gap-12 items-start">
         
         <div class="space-y-6">
             <h2 class="orbitron text-sm font-bold text-gray-400 mb-8 flex items-center gap-2">
-                <i data-lucide="layers" class="w-4 h-4"></i> SELECIONE UM PROTOCOLO
+                <i data-lucide="layers" class="w-4 h-4"></i> PROTOCOLOS ATIVOS
             </h2>
 
             <div class="game-card p-6 rounded-r-lg group">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="orbitron text-xl font-bold">VALORANTO</h3>
-                    <span class="text-[10px] bg-red-500/20 text-red-500 px-2 py-1 font-bold">PUZZLE TÁTICO</span>
+                    <h3 class="orbitron text-xl font-bold text-pink-500">COLOR CRUSH</h3>
+                    <span class="text-[10px] bg-pink-500/20 text-pink-500 px-2 py-1 font-bold italic">ARCADE / MATCH-3</span>
                 </div>
-                <p class="text-gray-400 text-sm mb-6">Adivinhe termos, agentes e mapas do Valorant. O desafio diário para quem conhece o meta.</p>
-                <a href="valoranto.html" class="btn-play inline-block px-8 py-2 text-sm font-black text-white italic">LAUNCH_GAME</a>
+                <p class="text-gray-400 text-sm mb-6">Elimine grupos de blocos e alcance combos massivos neste puzzle explosivo de alta performance.</p>
+                <a href="color-crush.html" class="btn-play" style="background: linear-gradient(to right, #ec4899, #a855f7);">EXECUTE_CRUSH</a>
             </div>
 
             <div class="game-card p-6 rounded-r-lg group">
                 <div class="flex justify-between items-start mb-4">
-                    <h3 class="orbitron text-xl font-bold">VISUAL GRAFFITI</h3>
-                    <span class="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-1 font-bold">CREATIVITY TOOL</span>
+                    <h3 class="orbitron text-xl font-bold">VALORANTO</h3>
+                    <span class="text-[10px] bg-red-500/20 text-red-500 px-2 py-1 font-bold italic">STRATEGY / WORDLE</span>
                 </div>
-                <p class="text-gray-400 text-sm mb-6">Canvas interativo com efeito de spray neon. Expresse sua arte digital em tempo real.</p>
-                <a href="graffiti.html" class="btn-play inline-block px-8 py-2 text-sm font-black text-white italic" style="background: #00f2ff; color: #000;">OPEN_CANVAS</a>
+                <p class="text-gray-400 text-sm mb-6">Teste seus conhecimentos táticos. Adivinhe agentes, mapas e armas do universo Valorant.</p>
+                <a href="valoranto.html" class="btn-play">LAUNCH_GAME</a>
             </div>
 
+            <div class="game-card p-6 rounded-r-lg group border-dashed border-white/5 bg-transparent">
+                <div class="flex justify-between items-start mb-4">
+                    <h3 class="orbitron text-xl font-bold text-cyan-400">GRAFFITI</h3>
+                    <span class="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-1 font-bold italic">CREATIVE_CANVAS</span>
+                </div>
+                <p class="text-gray-400 text-sm mb-6">Ferramenta de design interativo com spray neon e suporte para dispositivos móveis.</p>
+                <a href="graffiti.html" class="btn-play" style="background: #00f2ff; color: #000;">OPEN_STUDIO</a>
+            </div>
         </div>
 
         <div class="border border-white/5 bg-black/20 p-6 rounded-lg">
-            <h2 class="orbitron text-xs font-bold text-gray-500 mb-6 tracking-widest">SYSTEM_LOGS</h2>
+            <h2 class="orbitron text-xs font-bold text-gray-500 mb-6 tracking-widest">SYSTEM_DIAGNOSTICS</h2>
             <div class="space-y-4 text-[11px] mono text-gray-400">
-                <p><span class="text-green-500">[OK]</span> GDevelop Engine integration active.</p>
-                <p><span class="text-green-500">[OK]</span> Tailwind CSS v3.4.17 loaded.</p>
-                <p><span class="text-cyan-500">[INFO]</span> New protocol "Graffiti" added to main drive.</p>
-                <p><span class="text-red-500">[WARN]</span> Project "Pedro Pedro" is currently in maintenance.</p>
+                <p><span class="text-green-500">[OK]</span> GDevelop Runtime: Version 2026.1</p>
+                <p><span class="text-green-500">[OK]</span> Tailwind CSS: Injection Complete</p>
+                <p><span class="text-pink-500">[NEW]</span> Color Crush module initialized.</p>
+                <p><span class="text-cyan-500">[INFO]</span> Kovaliosky portfolio updated.</p>
             </div>
             
             <div class="mt-12 pt-12 border-t border-white/5">
-                <p class="text-[10px] text-gray-600 mb-2">DEVELOPER_ID</p>
-                <p class="orbitron text-lg font-bold">KOVALIOSKY DEV</p>
-                <p class="text-xs text-gray-500">Senior Dev & Graphic Designer</p>
+                <p class="text-[10px] text-gray-600 mb-2">OPERATOR_LOG</p>
+                <p class="orbitron text-lg font-bold">Visual Studio Games</p>
+                <p class="text-xs text-gray-500 italic">"Design and Development without limits."</p>
             </div>
         </div>
-
     </main>
 
-    <footer class="p-8 text-center text-[10px] text-gray-600 tracking-[0.5em] uppercase">
-        © 2026 Visual Studio Games // All Rights Reserved.
-    </footer>
-
-    <script>
-        lucide.createIcons();
-    </script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>
